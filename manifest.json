@@ -1,0 +1,17 @@
+{
+  "name": "wiki extension",
+  "description": "description",
+  "version": "1.0",
+  "manifest_version": 3,
+  "type": "module",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "css": ["wiki-styles.css"],
+      "js": ["wiki-scripts.js"],
+      "matches": ["https://*.wikipedia.org/*"]
+    }
+  ]
+}

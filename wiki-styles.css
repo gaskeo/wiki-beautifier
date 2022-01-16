@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@500&display=swap');
+
+:root {
+    --hidden-elements-opacity: 0;
+    --sup-display: none;
+}
+
+body {
+    background-color: #fff !important;
+}
+
+#content {
+    border: none;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 5rem !important;
+    transition: opacity 0.1s;
+}
+
+#mw-head-base, #mw-page-base {
+    display: none;
+}
+
+.mw-editsection {
+    opacity: var(--hidden-elements-opacity);
+    transition: opacity 0.2s;
+}
+
+sup {
+    display: var(--sup-display);
+}
+
+.menu-btn {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: #80A2FF transparent transparent transparent;
+    transition: border-color 0.2s;
+}
+
+.menu-btn:hover {
+    border-color: #0645AD transparent transparent transparent;
+}
+
+#firstHeading {
+    font-size: 2.4em;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+}
+
+.mw-headline {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+p, li, .mw-content-ltr, #content div {
+    font-family: 'Roboto', sans-serif;
+}
+
+p, ul, #content div {
+    font-size: 1em;
+}
+
