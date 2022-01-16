@@ -17,14 +17,14 @@ function menuToggle() {
     document.documentElement.style.setProperty('--hidden-elements-opacity',
         document.documentElement.style.getPropertyValue('--hidden-elements-opacity') === '0' ? '1' : '0');
 
+    document.documentElement.style.setProperty('--sup-anim-f',
+        document.documentElement.style.getPropertyValue('--sup-anim-f') === 'ease-in' ? 'ease-out' : 'ease-in');
+
     const content = document.getElementById('content');
     content.style.opacity = '0';
-    setTimeout(() => {
-            document.documentElement.style.setProperty('--sup-display',
-                document.documentElement.style.getPropertyValue('--sup-display') === 'none' ? 'inline' : 'none');
-            content.style.opacity = '1';
-        },
-        200);
+    document.documentElement.style.setProperty('--sup-width',
+        document.documentElement.style.getPropertyValue('--sup-width') === '0%' ? '40px' : '0%');
+    content.style.opacity = '1';
 
 
     const leftPanel = document.getElementById('mw-panel');
@@ -36,8 +36,8 @@ function menuToggle() {
 
 function clearAll() {
     document.documentElement.style.setProperty('--hidden-elements-opacity', '0');
-    document.documentElement.style.setProperty('--sup-display', 'none');
-
+    document.documentElement.style.setProperty('--sup-width', '0%');
+    document.documentElement.style.setProperty('--sup-anim-f', 'ease-out');
 }
 
 function createMenuButton() {
