@@ -7,9 +7,9 @@ function textSizeChanged(e) {
 }
 
 window.onload = () => {
+    createTools();
     hidePanels();
     clearAll();
-    createTools();
     createMenuButton()
 }
 
@@ -20,11 +20,8 @@ function menuToggle() {
     document.documentElement.style.setProperty('--sup-anim-f',
         document.documentElement.style.getPropertyValue('--sup-anim-f') === 'ease-in' ? 'ease-out' : 'ease-in');
 
-    const content = document.getElementById('content');
-    content.style.opacity = '0';
     document.documentElement.style.setProperty('--sup-width',
-        document.documentElement.style.getPropertyValue('--sup-width') === '0%' ? '40px' : '0%');
-    content.style.opacity = '1';
+        document.documentElement.style.getPropertyValue('--sup-width') === '0' ? 'auto' : '0');
 
 
     const leftPanel = document.getElementById('mw-panel');
@@ -32,11 +29,15 @@ function menuToggle() {
 
     const topPanel = document.getElementById('mw-head');
     topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
+
+    const rightPanel = document.getElementById('tools');
+    console.log(rightPanel.style.right)
+    rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
 }
 
 function clearAll() {
     document.documentElement.style.setProperty('--hidden-elements-opacity', '0');
-    document.documentElement.style.setProperty('--sup-width', '0%');
+    document.documentElement.style.setProperty('--sup-width', '0');
     document.documentElement.style.setProperty('--sup-anim-f', 'ease-out');
 }
 
@@ -49,9 +50,10 @@ function createMenuButton() {
 }
 
 function createTools() {
-    const content = document.getElementById('firstHeading');
+    const parent = document.getElementById('mw-navigation');
     let elem = document.createElement('div');
     elem.id = 'tools';
+    elem.style.right = '0';
 
     const style = document.createElement('style');
     style.id = 'new-styles';
@@ -60,20 +62,21 @@ function createTools() {
     const textSizeP = document.createElement('p');
     textSizeP.innerText = 'Размер текста';
     textSizeP.classList.add('t');
+    textSizeP.classList.add('right-menu-elems');
     elem.appendChild(textSizeP);
 
     const textSizeRange = document.createElement('input')
     textSizeRange.min = '-0.5';
     textSizeRange.max = '0.5';
-    textSizeRange.step = '0.1';
+    textSizeRange.step = '0.02';
     textSizeRange.value = '0';
     textSizeRange.type = 'range';
     textSizeRange.onchange = (e) => textSizeChanged(e);
     textSizeRange.oninput = (e) => textSizeChanged(e);
     elem.appendChild(textSizeRange);
+    textSizeRange.classList.add('right-menu-elems');
 
-    const parent = content.parentNode;
-    parent.insertBefore(elem, content);
+    parent.appendChild(elem);
 }
 
 function hidePanels() {
@@ -84,4 +87,9 @@ function hidePanels() {
     const topPanel = document.getElementById('mw-head');
     topPanel.style.marginTop = -topPanel.offsetHeight + 'px';
     topPanel.style.transition = 'margin-top 0.2s';
+
+    const rightPanel = document.getElementById('tools');
+    rightPanel.style.right = -rightPanel.offsetWidth + 'px';
+    rightPanel.style.transition = 'right 0.2s';
+
 }
