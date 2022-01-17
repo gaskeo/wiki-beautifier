@@ -113,6 +113,44 @@ p, ul, #content div {
     align-items: center;
 }
 
+.infobox, .thumbinner, .wikitable {
+    border-radius: 0.5rem;
+    border: none !important;
+    box-shadow: 0 0 10px 3px #bababa;
+}
+
+.infobox {
+    padding: 0.2rem !important;
+}
+
+.wikitable {
+    background-color: #FFF;
+}
+.wikitable tbody {
+    border-radius: .5rem;
+    border: none;
+    display: block;
+    border-collapse: separate;
+}
+
+.wikitable > * > tr > td, .wikitable > * > tr > th {
+    border: none !important;
+    border-radius: 0.5rem;
+}
+
+tbody tr:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+img {
+    border-radius: 0.5rem;
+    border: none !important;
+}
+
+th.infobox-above, td.infobox-below {
+    border-radius: 0.5rem;
+}
+
 #left-navigation .mw-list-item, #right-navigation .mw-list-item {
     background-image: none !important;
     background-color: #FFF !important;
