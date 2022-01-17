@@ -4,6 +4,7 @@
     --hidden-elements-opacity: 0;
     --sup-width: 0;
     --sup-anim-f: 'ease-out';
+    --a-color: #000;
 }
 
 body {
@@ -71,20 +72,20 @@ sup {
 }
 
 .menu-btn {
-    z-index: 100;
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 30px 30px 0 0;
-    border-color: #80A2FF transparent transparent transparent;
+    left: -2rem;
+    top: -2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #80A2FF;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #bababa !important;
+
     transition: border-color 0.2s;
 }
 
 .menu-btn:hover {
-    border-color: #CFE3FF transparent transparent transparent;
+    background-color: #CFE3FF;
 }
 
 #firstHeading {
@@ -113,10 +114,79 @@ p, ul, #content div {
     align-items: center;
 }
 
-.infobox, .thumbinner, .wikitable {
-    border-radius: 0.5rem;
+#right-navigation {
+    justify-content: right;
+}
+
+.infobox, .thumbinner, .wikitable, .toc, .gallerybox, .sistersitebox, .navbox, .catlinks, .barbox, .tright {
+    border-radius: 0.5rem !important;
     border: none !important;
-    box-shadow: 0 0 10px 3px #bababa;
+    box-shadow: 0 0 10px 3px #bababa !important;
+}
+
+.mwe-popups {
+    border-radius: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 0 10px 5px #9a9a9a !important;
+}
+
+.barbox * {
+    border-radius: 0.5rem;
+    border-color: transparent;
+    border: none !important;
+}
+
+.navbox-title {
+    background-color: #FFF !important;
+}
+
+.navbox * {
+    border-radius: .5rem !important;
+}
+
+.navbox {
+    margin-bottom: 0.6rem !important;
+}
+
+.infobox * {
+    border-radius: 0.5rem !important;
+}
+
+.p-personal {
+
+}
+
+a {
+    transition: color 0.2s;
+    color: var(--a-color) !important;
+}
+.gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    margin: 0 !important;
+    grid-gap: 0.6rem;
+    justify-content: space-between;
+}
+
+.gallery > .gallerybox {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.gallery > .gallerybox, .thumbinner > .thumbcaption {
+    font-size: 0.9em !important;
+}
+
+.thumb {
+    border: none !important;
+    background-color: #FFF !important;
+}
+
+.toc {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
 .infobox {
@@ -126,6 +196,7 @@ p, ul, #content div {
 .wikitable {
     background-color: #FFF;
 }
+
 .wikitable tbody {
     border-radius: .5rem;
     border: none;
@@ -145,6 +216,7 @@ tbody tr:last-child {
 img {
     border-radius: 0.5rem;
     border: none !important;
+    max-width: 100%;
 }
 
 th.infobox-above, td.infobox-below {
@@ -170,6 +242,10 @@ th.infobox-above, td.infobox-below {
 
 .vector-search-box-input:focus {
     border-bottom: 1px solid #A2A9B1 !important;
+}
+
+.vector-search-box {
+    margin-right: 0 !important;
 }
 
 .vector-search-box-input:focus-visible, .vector-search-box-input:focus {

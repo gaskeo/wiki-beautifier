@@ -23,6 +23,8 @@ function menuToggle() {
     document.documentElement.style.setProperty('--sup-width',
         document.documentElement.style.getPropertyValue('--sup-width') === '0' ? 'auto' : '0');
 
+    document.documentElement.style.setProperty('--a-color',
+        document.documentElement.style.getPropertyValue('--a-color') === '#000' ? '#0645ad' : '#000');
 
     const leftPanel = document.getElementById('mw-panel');
     leftPanel.style.marginLeft = (leftPanel.style.marginLeft ? '' : -leftPanel.offsetWidth + 'px');
@@ -39,6 +41,7 @@ function clearAll() {
     document.documentElement.style.setProperty('--hidden-elements-opacity', '0');
     document.documentElement.style.setProperty('--sup-width', '0');
     document.documentElement.style.setProperty('--sup-anim-f', 'ease-out');
+    document.documentElement.style.setProperty('--a-color', '#000');
 }
 
 function createMenuButton() {
