@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@500&display=swap');
 
 :root {
-    --hidden-elements-opacity: 0;
+    --hidden-elements-opacity: hidden;
     --sup-width: 0;
     --sup-anim-f: 'ease-out';
     --a-color: #000;
+    --a-text-decaration: none;
+    --a-cursor: default;
 }
 
 body {
@@ -223,7 +225,7 @@ th.infobox-above, td.infobox-below {
     border-radius: 0.5rem;
 }
 
-#left-navigation .mw-list-item, #right-navigation .mw-list-item {
+#left-navigation .mw-list-item, #right-navigation .mw-list-item, #right-navigation .vector-menu-checkbox, #left-navigation .vector-menu-checkbox {
     background-image: none !important;
     background-color: #FFF !important;
     display: table;
@@ -262,18 +264,18 @@ th.infobox-above, td.infobox-below {
     outline: none;
 }
 
-.mw-list-item a {
+.mw-list-item a, .vector-menu-checkbox, .vector-menu-dropdown, .vector-menu-heading {
     text-align: center;
     background-position: center !important;
     background-image: none !important;
     background-size: auto;
-    padding-left: 0 !important;
 }
 
-.vector-menu-content-list {
+.vector-menu-heading {
+    padding-right: 1.8em !important;
 }
 
-#mw-head .vector-menu {
+#mw-head:not(.emptyPortlet) .vector-menu:not(.emptyPortlet) {
     display: flex !important;
     align-items: center !important;
     background-image: none !important;
