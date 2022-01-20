@@ -111,7 +111,7 @@ sup {
     padding-left: 15px !important;
     margin-left: -16px;
     padding-right: 15px;
-    opacity: 1;
+    opacity: 0;
     background: #FFF;
     border: 1px solid #a2a9b1;
     border-top: none;

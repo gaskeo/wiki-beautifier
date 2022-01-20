@@ -23,7 +23,7 @@ const actions = [
     }
 ]
 
-window.addEventListener('scroll', function (e) {
+window.addEventListener('scroll', function () {
     const rect = header.getBoundingClientRect();
     const ph = document.getElementById('pseudo-header')
     if (rect.y < 10) {
