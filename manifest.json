@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "css": ["wiki-styles.css"],
+      "css": ["wiki-root.css", "wiki-changes.css", "wiki-new.css"],
       "js": ["wiki-scripts.js"],
       "matches": ["https://*.wikipedia.org/*"]
     }

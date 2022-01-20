@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@500&display=swap');
+
+:root {
+    --hidden-elements-opacity: hidden;
+    --sup-width: 0;
+    --sup-anim-f: 'ease-out';
+    --a-color: #000;
+    --a-text-decaration: none;
+    --a-cursor: default;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #fff !important;
+}
+
+p, li, .mw-content-ltr, #content div {
+    font-family: 'Roboto', sans-serif;
+}
+
+p, ul, #content div {
+    font-size: 1em;
+}
+
+a {
+    transition: color 0.2s;
+    color: var(--a-color) !important;
+}
+
+img {
+    border-radius: 0.5rem;
+    border: none !important;
+}

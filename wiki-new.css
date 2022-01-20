@@ -1,0 +1,77 @@
+.t {
+    font-size: 0.85em !important;
+}
+
+#tools {
+    padding-top: .5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11em;
+    transition: right .3s;
+}
+
+.menu-btn {
+    position: fixed;
+    left: -2rem;
+    top: -2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #80A2FF;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #bababa !important;
+
+    transition: border-color 0.2s;
+}
+
+.menu-btn:hover {
+    background-color: #CFE3FF;
+}
+
+.pseudo-header {
+    z-index: 100;
+    position: fixed !important;
+    top: 0;
+    padding-top: 60px;
+    width: calc(70vw + 15px);
+    padding-left: 15px !important;
+    margin-left: -16px;
+    padding-right: 15px;
+    opacity: 0;
+    background: #FFF;
+    border: 1px solid #a2a9b1;
+    border-top: none;
+    border-radius: 0 0 .5rem .5rem;
+    box-shadow: 0 0 10px 3px #bababa !important;
+    transition: opacity .3s;
+}
+
+.up-btn {
+    cursor: pointer;
+    appearance: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-45%) rotate(45deg);
+    width: 2rem;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 3px;
+    transition: margin-top .1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.up-btn * {
+    height: 1rem;
+    width: 1rem;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-top-left-radius: 0.3rem;
+}
+
+.up-btn:hover {
+    margin-top: -.2rem;
+}

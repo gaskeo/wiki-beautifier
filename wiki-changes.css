@@ -1,0 +1,255 @@
+/* !main content */
+#content {
+    border: none;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100vw - 22em);
+    left: 0;
+    right: 0;
+    margin-top: 5rem !important;
+    padding: 1.25em 15px 15px 15px;
+    overflow-x: hidden;
+}
+
+.mw-editsection {
+    opacity: var(--hidden-elements-opacity);
+    transition: opacity 0.2s;
+    font-size: 0.7em;
+}
+
+sup {
+    display: inline-block;
+    width: var(--sup-width);
+    overflow: hidden;
+}
+/* h1 */
+#firstHeading, .header {
+    font-size: 2.4em !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* h2... */
+.mw-headline {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+/* containers for images and other */
+.infobox, .thumbinner, .wikitable, .toc, .gallerybox, .sistersitebox, .navbox, .catlinks, .barbox, .tright {
+    border-radius: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 0 10px 3px #bababa !important;
+}
+
+/* content in bar chart container (example: https://ru.wikipedia.org/wiki/Русская_Википедия)*/
+.barbox * {
+    border-radius: 0.5rem;
+    border-color: transparent;
+    border: none !important;
+}
+
+/* titles for navigation blocks in content */
+.navbox {
+    margin-bottom: 0.6rem !important;
+}
+
+.navbox * {
+    border-radius: .5rem !important;
+}
+
+.navbox-title {
+    background-color: #FFF !important;
+}
+
+/* right card with information */
+.infobox {
+    padding: 0.2rem !important;
+}
+
+.infobox * {
+    border-radius: 0.5rem !important;
+}
+
+
+/* all for images */
+.gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    margin: 0 !important;
+    grid-gap: 0.6rem;
+    justify-content: space-between;
+}
+
+.gallery > .gallerybox {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.gallery > .gallerybox, .thumbinner > .thumbcaption {
+    font-size: 0.9em !important;
+}
+
+.thumb {
+    border: none !important;
+    background-color: #FFF !important;
+}
+
+/* all for tables */
+.wikitable {
+    background-color: #FFF;
+}
+
+.wikitable tbody {
+    border-radius: .5rem;
+    border: none;
+    display: block;
+    border-collapse: separate;
+}
+
+.wikitable > * > tr > td, .wikitable > * > tr > th {
+    border: none !important;
+    border-radius: 0.5rem;
+}
+
+tbody tr:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+th.infobox-above, td.infobox-below {
+    border-radius: 0.5rem;
+}
+
+
+
+/* contents */
+.toc {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+
+/* !menus */
+#mw-head-base, #mw-page-base {
+    display: none;
+}
+
+#left-navigation .mw-list-item,
+#right-navigation .mw-list-item,
+#right-navigation .vector-menu-checkbox,
+#left-navigation .vector-menu-checkbox {
+    background-image: none !important;
+    background-color: #FFF !important;
+    display: table;
+    text-align: center;
+    width: fit-content;
+    padding: 0;
+    margin: 0 0.4rem 0 0;
+}
+
+/* !!top menu */
+#mw-head {
+    width: 70vw !important;
+    max-width: calc(100vw - 22em) !important;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    transition: margin-top .3s !important;
+}
+
+#mw-head #left-navigation {
+    margin-left: 0;
+}
+
+#mw-head:not(.emptyPortlet) .vector-menu:not(.emptyPortlet) {
+    display: flex !important;
+    align-items: center !important;
+    background-image: none !important;
+}
+
+.emptyPortlet {
+    display: none !important;
+}
+
+.right-menu-elems {
+    margin-left: 1em;
+}
+
+/* buttons */
+.mw-list-item a,
+.vector-menu-checkbox,
+.vector-menu-dropdown,
+.vector-menu-heading {
+    text-align: center;
+    background-position: center !important;
+    background-image: none !important;
+    background-size: auto;
+}
+
+.vector-menu-heading {
+    padding-right: 1.8em !important;
+}
+
+/* search box */
+.vector-search-box {
+    margin-right: 0 !important;
+}
+
+.vector-search-box:focus-visible,
+.vector-search-box div:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.vector-search-box-input {
+    border-radius: 0 !important;
+    border-color: #FFF !important;
+    border-width: 0;
+    transition: border-bottom-color 1s;
+}
+
+.vector-search-box-input:focus {
+    border-bottom: 1px solid #A2A9B1 !important;
+}
+
+.vector-search-box-input:focus-visible,
+.vector-search-box-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.simpleSearch:focus-visible,
+#searchform:focus-visible {
+    outline: none;
+}
+
+/* ^ search box */
+
+#right-navigation, #left-navigation {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+}
+
+#right-navigation {
+    justify-content: right;
+}
+
+/* !!left menu */
+#mw-panel {
+    transition: margin-left .3s !important;
+}
+
+/* !popups on links */
+.mwe-popups {
+    border-radius: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 0 10px 5px #9a9a9a !important;
+}
