@@ -26,7 +26,6 @@ const actions = [
 window.addEventListener('scroll', function (e) {
     const rect = header.getBoundingClientRect();
     const ph = document.getElementById('pseudo-header')
-    console.log(rect.y)
     if (rect.y < 10) {
         ph.style.opacity = '1'
     } else if (document.getElementById('pseudo-header').style.opacity === '1') {
@@ -110,7 +109,6 @@ function togglePanels() {
     topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
 
     const rightPanel = document.getElementById('tools');
-    console.log(rightPanel.style.right)
     rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
 
 }
