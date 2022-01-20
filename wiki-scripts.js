@@ -1,3 +1,39 @@
+const header = document.getElementById('firstHeading');
+
+const actions = [
+    {
+        name: '--hidden-elements-opacity',
+        value1: '0',
+        value2: '1'
+    },
+    {
+        name: '--sup-anim-f',
+        value1: 'ease-in',
+        value2: 'ease-out'
+    },
+    {
+        name: '-sup-width',
+        value1: '0',
+        value2: 'auto'
+    },
+    {
+        name: '--a-color',
+        value1: '#000',
+        value2: '#0645AD'
+    }
+]
+
+window.addEventListener('scroll', function (e) {
+    const rect = header.getBoundingClientRect();
+    const ph = document.getElementById('pseudo-header')
+    console.log(rect.y)
+    if (rect.y < 10) {
+        ph.style.opacity = '1'
+    } else if (document.getElementById('pseudo-header').style.opacity === '1') {
+        ph.style.opacity = '0';
+    }
+})
+
 function textSizeChanged(e) {
     const newSize = e.target.value - 0;
     let style = document.getElementById('new-styles');
@@ -7,41 +43,25 @@ function textSizeChanged(e) {
 }
 
 window.onload = () => {
+    createPseudoHeader();
     createTools();
-    hidePanels();
     clearAll();
-    createMenuButton()
+    createMenuButton();
+    togglePanels();
 }
 
 function menuToggle() {
-    document.documentElement.style.setProperty('--hidden-elements-opacity',
-        document.documentElement.style.getPropertyValue('--hidden-elements-opacity') === '0' ? '1' : '0');
-
-    document.documentElement.style.setProperty('--sup-anim-f',
-        document.documentElement.style.getPropertyValue('--sup-anim-f') === 'ease-in' ? 'ease-out' : 'ease-in');
-
-    document.documentElement.style.setProperty('--sup-width',
-        document.documentElement.style.getPropertyValue('--sup-width') === '0' ? 'auto' : '0');
-
-    document.documentElement.style.setProperty('--a-color',
-        document.documentElement.style.getPropertyValue('--a-color') === '#000' ? '#0645ad' : '#000');
-
-    const leftPanel = document.getElementById('mw-panel');
-    leftPanel.style.marginLeft = (leftPanel.style.marginLeft ? '' : -leftPanel.offsetWidth + 'px');
-
-    const topPanel = document.getElementById('mw-head');
-    topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
-
-    const rightPanel = document.getElementById('tools');
-    console.log(rightPanel.style.right)
-    rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
+    for (let elem of actions) {
+        document.documentElement.style.setProperty(elem.name,
+            document.documentElement.style.getPropertyValue(elem.name) === elem.value1 ? elem.value2 : elem.value1)
+    }
+    togglePanels();
 }
 
 function clearAll() {
-    document.documentElement.style.setProperty('--hidden-elements-opacity', '0');
-    document.documentElement.style.setProperty('--sup-width', '0');
-    document.documentElement.style.setProperty('--sup-anim-f', 'ease-out');
-    document.documentElement.style.setProperty('--a-color', '#000');
+    for (let elem of actions) {
+        document.documentElement.style.setProperty(elem.name, elem.value1);
+    }
 }
 
 function createMenuButton() {
@@ -82,17 +102,31 @@ function createTools() {
     parent.appendChild(elem);
 }
 
-function hidePanels() {
+function togglePanels() {
     const leftPanel = document.getElementById('mw-panel');
-    leftPanel.style.marginLeft = -leftPanel.offsetWidth + 'px';
-    leftPanel.style.transition = 'margin-left 0.2s';
+    leftPanel.style.marginLeft = (leftPanel.style.marginLeft ? '' : -leftPanel.offsetWidth + 'px');
 
     const topPanel = document.getElementById('mw-head');
-    topPanel.style.marginTop = -topPanel.offsetHeight + 'px';
-    topPanel.style.transition = 'margin-top 0.2s';
+    topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
 
     const rightPanel = document.getElementById('tools');
-    rightPanel.style.right = -rightPanel.offsetWidth + 'px';
-    rightPanel.style.transition = 'right 0.2s';
+    console.log(rightPanel.style.right)
+    rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
 
+}
+
+function createPseudoHeader() {
+    const pseudoHeader = document.getElementById('firstHeading').cloneNode(true);
+    pseudoHeader.setAttribute('id', 'pseudo-header');
+    pseudoHeader.classList.add('header');
+    pseudoHeader.classList.add('pseudo-header');
+
+    const upButton = document.createElement(`button`);
+    upButton.appendChild(document.createElement('div'))
+    upButton.classList.add('up-btn')
+
+    upButton.onclick = () => document.getElementById('mw-head').scrollIntoView({block: 'start', behavior: 'smooth'});
+
+    pseudoHeader.appendChild(upButton);
+    document.getElementById('content').appendChild(pseudoHeader);
 }
