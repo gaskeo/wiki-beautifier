@@ -127,6 +127,7 @@ sup {
 }
 
 .up-btn {
+    cursor: pointer;
     appearance: none;
     position: absolute;
     right: 15px;

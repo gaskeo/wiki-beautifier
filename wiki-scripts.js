@@ -12,7 +12,7 @@ const actions = [
         value2: 'ease-out'
     },
     {
-        name: '-sup-width',
+        name: '--sup-width',
         value1: '0',
         value2: 'auto'
     },
