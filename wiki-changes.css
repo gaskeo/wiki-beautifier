@@ -124,14 +124,19 @@ th.infobox-above, td.infobox-below {
     border-radius: 0.5rem;
 }
 
-
-
 /* contents */
 .toc {
     padding-left: 10px !important;
     padding-right: 10px !important;
 }
 
+.toctogglespan:before {
+    content: ' ' !important;
+}
+
+.toctogglespan:after {
+    content: '' !important;
+}
 
 /* !menus */
 #mw-head-base, #mw-page-base {
