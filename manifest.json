@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "css": ["wiki-root.css", "wiki-changes.css", "wiki-new.css"],
-      "js": ["wiki-scripts.js"],
+      "js": ["wiki-start.js", "wiki-new.js","wiki-onload.js", "wiki-events.js"],
       "matches": ["https://*.wikipedia.org/*"]
     }
   ]
