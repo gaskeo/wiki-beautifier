@@ -38,10 +38,29 @@ sup {
 }
 
 /* containers for images and other */
-.infobox, .thumbinner, .wikitable, .toc, .gallerybox, .sistersitebox, .navbox, .catlinks, .barbox, .tright {
+.infobox,
+.thumbinner,
+.wikitable,
+.toc,
+.gallerybox,
+.sistersitebox,
+.navbox,
+.catlinks,
+.barbox,
+.tright,
+.main-top,
+.main-box,
+.wide,
+.hlist {
     border-radius: 0.5rem !important;
     border: none !important;
     box-shadow: 0 0 10px 3px #bababa !important;
+}
+
+.main-top-left {
+    border-top-left-radius: 0.5rem !important;
+    border-bottom-left-radius: 0.5rem !important;
+    border: none !important;
 }
 
 /* content in bar chart container (example: https://ru.wikipedia.org/wiki/Русская_Википедия)*/
@@ -100,24 +119,31 @@ sup {
 }
 
 /* all for tables */
-.wikitable {
+.wikitable, .wide {
     background-color: #FFF;
 }
 
-.wikitable tbody {
+.wikitable tbody, .wide tbody {
     border-radius: .5rem;
     border: none;
     display: block;
     border-collapse: separate;
 }
 
-.wikitable > * > tr > td, .wikitable > * > tr > th {
+.wikitable > * > tr > td,
+.wikitable > * > tr > th,
+.wide > * > tr > td,
+.wide > * > tr > th {
     border: none !important;
     border-radius: 0.5rem;
 }
 
+tbody {
+    border-radius: .5rem;
+}
+
 tbody tr:last-child {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 0.5rem;
 }
 
 th.infobox-above, td.infobox-below {
