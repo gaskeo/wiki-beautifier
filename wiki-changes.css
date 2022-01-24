@@ -12,6 +12,10 @@
     overflow-x: hidden;
 }
 
+#contentSub {
+    margin: 1.4em 0 1.4em 0 !important;
+}
+
 .mw-editsection {
     opacity: var(--hidden-elements-opacity);
     transition: opacity 0.2s;
@@ -23,6 +27,7 @@ sup {
     width: var(--sup-width);
     overflow: hidden;
 }
+
 /* h1 */
 #firstHeading, .header {
     font-size: 2.4em !important;
@@ -51,7 +56,7 @@ sup {
 .main-top,
 .main-box,
 .wide,
-.hlist {
+.flaggedrevs_preview {
     border-radius: 0.5rem !important;
     border: none !important;
     box-shadow: 0 0 10px 3px #bababa !important;
@@ -63,7 +68,7 @@ sup {
     border: none !important;
 }
 
-/* content in bar chart container (example: https://ru.wikipedia.org/wiki/Русская_Википедия)*/
+/* content in bar chart container (example: https://ru.wikipedia.org/wiki/Русская_Википедия) */
 .barbox * {
     border-radius: 0.5rem;
     border-color: transparent;
@@ -119,23 +124,29 @@ sup {
 }
 
 /* all for tables */
-.wikitable, .wide {
+table {
     background-color: #FFF;
+    overflow-x: scroll !important;
+    border: none !important;
+    box-sizing: content-box !important;
 }
 
-.wikitable tbody, .wide tbody {
+table:hover td, table:hover th {
+    border: 1px solid #dcdcdc !important;
+}
+
+table tbody {
     border-radius: .5rem;
     border: none;
     display: block;
     border-collapse: separate;
 }
 
-.wikitable > * > tr > td,
-.wikitable > * > tr > th,
-.wide > * > tr > td,
-.wide > * > tr > th {
-    border: none !important;
+table > * > tr > td,
+table > * > tr > th {
+    border: 1px solid transparent !important;
     border-radius: 0.5rem;
+    transition: border 0.2s;
 }
 
 tbody {
