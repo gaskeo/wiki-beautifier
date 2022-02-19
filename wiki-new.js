@@ -17,7 +17,7 @@ function createTools() {
     elem.appendChild(style);
 
     const textSizeP = document.createElement('p');
-    textSizeP.innerText = 'Размер текста';
+    textSizeP.innerText = 'text size';
     textSizeP.classList.add('t');
     textSizeP.classList.add('right-menu-elems');
     elem.appendChild(textSizeP);
