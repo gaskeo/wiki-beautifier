@@ -11,7 +11,7 @@ window.addEventListener('scroll', function () {
 })
 
 function textSizeChangedEvent(e) {
-    const newSize = e.target.value - 0;
+    const newSize = parseFloat(e.target.value);
     let style = document.getElementById('new-styles');
     style.innerHTML = `#content p:not(.t), #content ul, #content div:not(#tools) {font-size: ${1 + newSize}em}
      #firstHeading {font-size: ${2.4 + newSize}em} 
@@ -19,10 +19,10 @@ function textSizeChangedEvent(e) {
 }
 
 function menuToggleEvent() {
-    for (let elem of actions) {
-        document.documentElement.style.setProperty(elem.name,
-            document.documentElement.style.getPropertyValue(elem.name) === elem.value1 ? elem.value2 : elem.value1)
-    }
+    for (let elem of actions) document.documentElement.style.setProperty(
+        elem.name,
+        document.documentElement.style.getPropertyValue(elem.name) === elem.value1 ? elem.value2 : elem.value1)
+
     togglePanelsEvent();
 }
 
