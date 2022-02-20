@@ -1,14 +1,15 @@
-# [wikipedia](https://www.wikipedia.org/) beautifier for [Google Chrome](https://www.google.com/chrome/) 
+# [Wikipedia](https://www.wikipedia.org/) beautifier for [Google Chrome](https://www.google.com/chrome/) 
 
-Simple extension for [wikipedia](https://www.wikipedia.org/) with beautiful styles. 
+Very lightweight and easy-to-use 
+Chrome Extension with pretty styles for wikipedia 
 
 ![preview](images/scroll.gif)
 
-It can simplify wiki page for good reading experience: 
-* removing color highlighting of links
-* removing all superscripts
-* removing all menus. Only content 
+It can simplify a Wiki page view for better reading experience: 
+* no links highlighting
+* no superscripts
+* no unnecessary menus. only the content of an article
 
-You can toggle this changes 
-by clicking on button in  the upper left corner: 
+You can toggle these changes 
+by clicking the upper left corner: 
 ![toggle](images/toggle.gif)
