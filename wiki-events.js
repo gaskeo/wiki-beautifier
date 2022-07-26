@@ -12,6 +12,7 @@ window.addEventListener('scroll', function () {
 
 function textSizeChangedEvent(e) {
     const newSize = parseFloat(e.target.value);
+    window.localStorage.setItem('text-size', String(newSize))
     let style = document.getElementById('new-styles');
     style.innerHTML = `#content p:not(.t), #content ul, #content div:not(#tools) {font-size: ${1 + newSize}em}
      #firstHeading {font-size: ${2.4 + newSize}em} 
@@ -28,11 +29,24 @@ function menuToggleEvent() {
 
 function togglePanelsEvent() {
     const leftPanel = document.getElementById('mw-panel');
-    leftPanel.style.marginLeft = (leftPanel.style.marginLeft ? '' : -leftPanel.offsetWidth + 'px');
+    if (leftPanel?.style) {
+        leftPanel.style.marginLeft = (leftPanel?.style?.marginLeft ? '' : -leftPanel.offsetWidth + 'px');
+    }
 
     const topPanel = document.getElementById('mw-head');
-    topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
+    if (topPanel?.style) {
+        topPanel.style.marginTop = (topPanel.style.marginTop ? '' : -topPanel.offsetHeight + 'px');
+    }
 
     const rightPanel = document.getElementById('tools');
-    rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
+    if (rightPanel?.style) {
+        rightPanel.style.right = (rightPanel.style.right !== '0px' ? '0px' : -rightPanel.offsetWidth + 'px');
+    }
+}
+
+function setDefaultTextSize() {
+    const defaultTextSize = window.localStorage.getItem('text-size')
+    if (defaultTextSize) {
+        textSizeChangedEvent({target: {value: defaultTextSize}})
+    }
 }

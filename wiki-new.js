@@ -8,6 +8,9 @@ function createMenuButton() {
 
 function createTools() {
     const parent = document.getElementById('mw-navigation');
+    if (!parent) {
+        return
+    }
     let elem = document.createElement('div');
     elem.id = 'tools';
     elem.style.right = '0';

@@ -6,4 +6,6 @@ window.onload = () => {
     setProps();
     createMenuButton();
     togglePanelsEvent();
+    setDefaultTextSize();
+
 }

@@ -3,7 +3,6 @@
   "description": "description",
   "version": "1.0",
   "manifest_version": 3,
-  "type": "module",
   "background": {
     "service_worker": "background.js"
   },
@@ -11,7 +10,8 @@
     {
       "css": ["wiki-root.css", "wiki-changes.css", "wiki-new.css"],
       "js": ["wiki-start.js", "wiki-new.js","wiki-onload.js", "wiki-events.js"],
-      "matches": ["https://*.wikipedia.org/*"]
+      "matches": ["https://*.wikipedia.org/*"],
+      "web_accessible_resources": ["fonts/Nunito/Nunito-VariableFont_wght.ttf", "wiki-root.css", "*.ttf"]
     }
   ]
 }
