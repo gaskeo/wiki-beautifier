@@ -38,12 +38,13 @@
     margin-left: -16px;
     padding-right: 15px;
     opacity: 0;
-    background: #FFF;
-    border: 1px solid #a2a9b1;
-    border-top: none;
+    background: transparent;
+    backdrop-filter: blur(6px);
+    border: none;
     border-radius: 0 0 .5rem .5rem;
     box-shadow: 0 0 10px 3px #bababa !important;
     transition: opacity .3s;
+    outline: none;
 }
 
 .up-btn {
